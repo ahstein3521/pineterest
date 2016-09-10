@@ -1,0 +1,17 @@
+<div class="grid">
+	<div class="loader">
+		<i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+		<span class="sr-only">Loading...</span>
+	</div>
+{{#each pins}}
+	<div class="pin" id="{{this._id}}">
+		{{#if ../canEdit}}
+			<button class="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+		{{/if}}
+		<img src="{{this.image}}">
+		<a href="/board?user={{this.postedBy}}">
+			<h4>{{this.title}}</h4>
+		</a>	
+	</div>
+{{/each}}
+</div>
