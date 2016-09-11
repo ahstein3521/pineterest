@@ -8,7 +8,7 @@
 		{{#if ../canEdit}}
 			<button class="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 		{{/if}}
-		<img src="{{this.image}}">
+		<img src="{{this.image}}" onerror="this.onerror=null;this.src='public/dist/images/default.jpg'"/>
 		<a href="/board?user={{this.postedBy}}">
 			<h4>{{this.title}}</h4>
 		</a>	

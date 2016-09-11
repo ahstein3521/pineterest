@@ -20,6 +20,7 @@ $("img").on("error",function(){
 		}
 	})
 })
+
 $(".delete").click(function(){
 	var id=$(this).parent().attr("id");
 	var _this=this;

@@ -3,7 +3,6 @@ var User=require("../models/user")
 module.exports=function(app){
 	app.use(function(req,res,next){
 		if(req.session.pins){
-			console.log("next");
 			next();
 		}else{
 			Pin.find({},function(err,pins){
@@ -52,7 +51,7 @@ module.exports=function(app){
 		Pin.findByIdAndUpdate(id,{"$set":{"image":image}},{new:true,upsert:true,safe:true},function(err){
 			if(err) return res.status(500).send(err);
 			req.session.pins[id].image=image;
-			res.status(200).send("Repaired broken image.")
+			res.redirect(303,"/dashboard");
 		})
 	})
 
